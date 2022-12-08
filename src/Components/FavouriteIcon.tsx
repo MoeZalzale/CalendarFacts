@@ -9,10 +9,10 @@ import { useFactsContext } from '../Context/FactsContext'
 const FavouriteIcon = () => {
 
  
-    const {openList,factsList} = useFactsContext();
+    const {openList,factsList, isListOpen, closeList} = useFactsContext();
 
     return (
-        <div className ="absolute top-10 right-20 flex items-center justify-center hover:cursor-pointer" onClick ={openList}>
+        <div className =" flex items-center justify-center hover:cursor-pointer" onClick ={isListOpen? closeList: openList}>
             
   <StarIcon className="w-[4rem] h-[4rem] flex items-center justify-center relative fill-yellow-400"/>
   {factsList.length>0 && <span className="absolute  text-black font-bold text-lg">

@@ -6,7 +6,7 @@ import FavouriteIcon from "./Components/FavouriteIcon"
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-around bg-slate-200">
+    <div className="h-screen flex flex-col items-center justify-start space-y-10 bg-slate-200 pt-40">
       <FactsContextProvider>
         <FavouriteIcon/>
       <CalendarFacts/>

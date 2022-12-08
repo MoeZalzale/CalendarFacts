@@ -11,6 +11,7 @@ type FactsContext = {
     factsList : string[]
     openList: ()=>void 
     closeList: ()=>void
+    isListOpen: boolean
 
 }
 
@@ -53,7 +54,7 @@ export const FactsContextProvider = ({children} : FactsProviderProps) =>{
     }
 
 return (
-<FactsContext.Provider value={{likeUnlike,factsList,containsFact, openList, closeList}}>
+<FactsContext.Provider value={{likeUnlike,factsList,containsFact, openList, closeList, isListOpen}}>
 
     {children}
 <FavouriteList isOpen={isListOpen}/>
