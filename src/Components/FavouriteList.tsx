@@ -6,10 +6,17 @@ import ListItem from './ListItem'
 import { Rating, List } from '@mui/material';
 
 
-const FavouriteList = ({isOpen}: {isOpen:boolean}) => {
+// component for displaying list of facts favourited by the user
+
+type Props = {
+    isOpen: boolean
+}
+
+const FavouriteList = ({isOpen}: Props) => {
 
     const {closeList, factsList} = useFactsContext()
 
+    // iterates list of facts and renders list of ListItem components
     const renderList = (): JSX.Element[] => {
     return factsList.map(fact => {
             

@@ -14,13 +14,15 @@ type FactsContext = {
 
 }
 
-
+// creates context object
 const FactsContext = createContext({} as FactsContext)
 
+//custom hook - allows other components to access context objects
 export const useFactsContext = () =>{
     return useContext(FactsContext)
 }
 
+// context provider - wraps all components and allows them to share state and functions
 export const FactsContextProvider = ({children} : FactsProviderProps) =>{
     const [factsList,updateFactsList] = useState<string[]>([])
     const [isListOpen, updateListIsOpen] = useState<boolean>(false)
@@ -28,7 +30,7 @@ export const FactsContextProvider = ({children} : FactsProviderProps) =>{
     const likeUnlike = (fact:string) => {
         updateFactsList(currFacts =>{
             if (currFacts.find(e => e===fact)==null){
-                return [...factsList,fact]
+                return [...currFacts,fact]
             }
             else{
                 return currFacts.filter(e => e!==fact)

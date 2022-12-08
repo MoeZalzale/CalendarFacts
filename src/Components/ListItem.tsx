@@ -2,7 +2,16 @@ import React from 'react'
 import { Rating, ListItem as Item, ListItemText, ListItemIcon, Divider} from '@mui/material';
 import { useFactsContext } from '../Context/FactsContext';
 
-const ListItem = ({fact} : {fact:string}) => {
+
+// component for displaying single list items in FavouriteList component
+// also allows user to un-favourite a fact
+
+
+type Fact = {
+    fact: string
+}
+
+const ListItem = ({fact} : Fact) => {
 
     const {likeUnlike, containsFact } = useFactsContext()
 
